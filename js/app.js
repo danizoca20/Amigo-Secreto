@@ -1,9 +1,9 @@
 const amigos = [];
 
 function adicionar() {
-    const campo = document.getElementById("amigo");
+    const campo = document.getElementById("nome-amigo");
     const nome = campo.value;
-    const lista = document.getElementById("listaAmigos");
+    const lista = document.getElementById("lista-amigos");
 
     if (nome === "") {
         alert("Digite um nome!");
@@ -29,14 +29,16 @@ function sortear() {
     const indice = Math.floor(Math.random() * amigos.length);
     const amigoSorteado = amigos[indice];
 
-    const resultado = document.getElementById("resultado");
+    const resultado = document.getElementById("lista-sorteio");
     resultado.textContent = "Amigo sorteado: " + amigoSorteado;
 }
 
 function reiniciar() {
+    event.preventDefault();
+
     amigos.length = 0;
 
-    document.getElementById("listaAmigos").textContent = "";
-    document.getElementById("resultado").textContent = "";
-    document.getElementById("amigo").value = "";
+    document.getElementById("lista-amigos").textContent = "";
+    document.getElementById("lista-sorteio").textContent = "";
+    document.getElementById("nome-amigo").value = "";
 }
